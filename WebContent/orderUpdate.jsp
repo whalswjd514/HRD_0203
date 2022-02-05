@@ -70,19 +70,19 @@
 	</tr>
 	<tr>
 		<th>상품코드</th>
-		<td><input type="text" name="productId" value="<%=productId %>"></td>
+		<td><input type="text" name="productId" value="<%=productId %>" disabled></td>
 		<th>상 품 명</th>
-		<td><input type="text" name="name" value="<%=name %>"></td>
+		<td><input type="text" name="name" value="<%=name %>" disabled></td>
 	</tr>
 	<tr>
 		<th>단 가</th>
-		<td><input type="text" name="unitprice" value="<%=unitprice %>"></td>
+		<td><input type="text" name="unitprice" value="<%=unitprice %>" disabled></td>
 		<th>주문수량</th>
-		<td><input type="text" name="orderQty" value="<%=pQty %>"></td>
+		<td><input type="text" name="orderQty" value="<%=pQty %>" disabled></td>
 	</tr>
 	<tr>
 		<th>주문금액</th>
-		<td><input type="text" name="total" value="<%=total %>"></td>
+		<td><input type="text" name="total" value="<%=total %>" disabled></td>
 		<th>주문주소</th>
 		<td><input type="text" name="address" value="<%=address %>"></td>
 	</tr>

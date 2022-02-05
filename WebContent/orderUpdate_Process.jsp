@@ -11,30 +11,43 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	PreparedStatement pstmt=null;
+	ResultSet rs=null;
+	
 	String orderDate=request.getParameter("orderDate");
 	String orderName=request.getParameter("orderName");
-	String productId=request.getParameter("productId");
-	String unitprice=request.getParameter("unitprice");
-	String orderQty=request.getParameter("orderQty");
 	String address=request.getParameter("address");
+	System.out.println("orderAddress"+orderDate+orderName+address);
 	
 	try{
-		String sql="update order0203 set productId=?,unitprice=?,orderQty=?,orderAddress=? where orderDate=? and orderName=?";
+		String sql="select * from order0203 where orderDate=? and orderName=?";
 		pstmt=conn.prepareStatement(sql);
-		pstmt.setString(5, orderDate);
-		pstmt.setString(6, orderName);
-		pstmt.setString(1, productId);
-		pstmt.setString(2, unitprice);
-		pstmt.setString(3, orderQty);
-		pstmt.setString(4, address);
-		pstmt.executeUpdate();
-		System.out.println("데이터 수정 성공");
-		%>
-		<script>
-			alert("수정을 성공하였습니다!");
-			location.href="orderSelect.jsp";
-		</script>
-		<%
+		pstmt.setString(1, orderDate);
+		pstmt.setString(2, orderName);
+		rs=pstmt.executeQuery();
+		if(rs.next()){
+			sql="update order0203 set orderAddress=? where orderDate=? and orderName=?";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, address);
+			pstmt.setString(2, orderDate);
+			pstmt.setString(3, orderName);
+			pstmt.executeUpdate();
+			System.out.println("데이터 수정 성공");
+			%>
+			<script>
+				alert("수정을 성공하였습니다!");
+				location.href="orderSelect.jsp";
+			</script>
+			<%
+		}else{
+			%>
+			<script>
+				alert("일치하는 데이터가 없습니다.");
+				history.back(-1);
+			</script>
+			<%
+		}
+		
+		
 	}catch(SQLException e){
 		System.out.println("데이터 수정 실패");
 		e.printStackTrace();
