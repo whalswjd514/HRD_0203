@@ -82,7 +82,7 @@
 		<td><%=phone %></td>
 		<td><%=address %></td>
 		<td><%=interest %></td>
-		<td><a href="memberU.jsp?id=<%=id %>">수정</a> / 
+		<td><a href="memberUpdate.jsp?id=<%=id %>">수정</a> / 
 			<a href="memberDelete.jsp?id=<%=id %>" onclick="if(!confirm('정말로 삭제하시겠습니까?')) return false;">삭제</a>
 		</td>
 	</tr>
