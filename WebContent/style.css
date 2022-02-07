@@ -75,6 +75,9 @@ footer{
 #p1{
 	padding:0 0 0 100px;
 }
+#a1{
+	color:white;
+}
 #th1{
 	width:30%;
 	background:#c8c8c8;
@@ -85,6 +88,11 @@ footer{
 }
 #in2{
 	width:80%;
+}
+#in3{
+	width:15%;
+}#td1{
+	background:lightgray;
 }
 #btn1{
 	width:20%;

@@ -22,9 +22,9 @@
 		}else if(document.form.orderQty.value==""){
 			alert("주문수량을 입력하세요.");
 			document.form.orderQty.focus();
-		}else if(document.form.address.value==""){
+		}else if(document.form.orderAddress.value==""){
 			alert("주문주소를 입력하세요.");
-			document.form.address.focus();
+			document.form.orderAddress.focus();
 		}else{
 			document.form.submit();
 		}
@@ -56,7 +56,7 @@
 			int unitprice=rs.getInt(5);
 			int pQty=rs.getInt(6);
 			int total=unitprice*pQty;         //total은 테이블에 없으므로 값을 곱해서 넘겨줘야 함
-			String address=rs.getString(7);   //rs.getString("orderAddress")는 위의 sql문에서 넘어온 이름
+			String orderAddress=rs.getString(7);   //rs.getString("orderAddress")는 위의 sql문에서 넘어온 이름
 			System.out.println("데이터 조회 성공");
 %>
 <form name="form" method="post" action="orderUpdate_Process.jsp">
@@ -84,7 +84,7 @@
 		<th>주문금액</th>
 		<td><input type="text" name="total" value="<%=total %>" disabled></td>
 		<th>주문주소</th>
-		<td><input type="text" name="address" value="<%=address %>"></td>
+		<td><input type="text" name="orderAddress" value="<%=orderAddress %>"></td>
 	</tr>
 	<tr>
 		<td colspan=4 align=center>

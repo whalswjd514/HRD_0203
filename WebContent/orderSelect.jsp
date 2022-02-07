@@ -61,7 +61,7 @@
 			String name=rs.getString(4);
 			String unitprice=rs.getString(5);
 			String orderQty=rs.getString(6);
-			String address=rs.getString(7);
+			String orderAddress=rs.getString(7);
 			no++;
 %>
 	<tr>
@@ -72,7 +72,7 @@
 		<td><%=name %></td>
 		<td><%=unitprice %></td>
 		<td><%=orderQty %></td>
-		<td><%=address %></td>
+		<td><%=orderAddress %></td>
 		<td><a href="orderUpdate.jsp?orderDate=<%=orderDate %>&orderName=<%=orderName %>">수정</a> / 
 			<a href="orderDelete.jsp?orderDate=<%=orderDate %>&orderName=<%=orderName %>" onclick="if(!confirm('정말로 삭제하시겠습니까?')) return false;">삭제</a>
 		</td>

@@ -15,8 +15,8 @@
 	
 	String orderDate=request.getParameter("orderDate");
 	String orderName=request.getParameter("orderName");
-	String address=request.getParameter("address");
-	System.out.println("orderAddress"+orderDate+orderName+address);
+	String orderAddress=request.getParameter("orderAddress");
+	/* System.out.println("orderAddress"+orderDate+orderName+address); */
 	
 	try{
 		String sql="select * from order0203 where orderDate=? and orderName=?";
@@ -27,7 +27,7 @@
 		if(rs.next()){
 			sql="update order0203 set orderAddress=? where orderDate=? and orderName=?";
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, address);
+			pstmt.setString(1, orderAddress);
 			pstmt.setString(2, orderDate);
 			pstmt.setString(3, orderName);
 			pstmt.executeUpdate();

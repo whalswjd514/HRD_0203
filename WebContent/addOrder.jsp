@@ -22,9 +22,9 @@
 		}else if(document.form.orderQty.value==""){
 			alert("주문수량을 입력하세요.");
 			document.form.orderQty.focus();
-		}else if(document.form.address.value==""){
+		}else if(document.form.orderAddress.value==""){
 			alert("주문주소를 입력하세요.");
-			document.form.address.focus();
+			document.form.orderAddress.focus();
 		}else{
 			form.action="addOrder_Process.jsp"
 		}
@@ -123,7 +123,7 @@
 		<th>주문금액</th>
 		<td><input type="text" name="total" value="<%=total %>"></td>
 		<th>주문주소</th>
-		<td><input type="text" name="address"></td>
+		<td><input type="text" name="orderAddress"></td>
 	</tr>
 	<tr>
 		<td colspan=4 align=center>
